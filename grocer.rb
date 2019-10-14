@@ -1,9 +1,8 @@
 def consolidate_cart(cart)
   combined_cart = {}
   cart.map do |items_in_cart|
-    combined_cart[item_name] = items_in_cart.values[0]
-    if combined_cart[item_name][:count]
-      combined_cart[item_name][:count] += 1
+    if combined_cart[item_name.keys[0]]
+      combined_cart[item_name.keys[0]][:count] += 1
     else
       combined_cart[item_name][:count] = 1
     end
